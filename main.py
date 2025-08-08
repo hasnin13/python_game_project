@@ -21,15 +21,19 @@ class Main:
     
     
     def run_game(self):
+         x = 100
+         y = 100
          while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     return
 
-            self.screen.fill(self.settings.bg_color) 
+            self.screen.fill(self.settings.bg_color) # this is the bg
             self.render_fps(self.screen, self.clock, self.font)
-            #pygame.draw.rect(self.screen, (255,255,255),(100, 100,200,100))  
+            pygame.draw.rect(self.screen, (255,255,255),(x, y,200,100)) 
+            x+= .1
+            y+= .2 
 
             pygame.display.flip()
             self.clock.tick()
